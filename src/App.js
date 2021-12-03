@@ -20,6 +20,8 @@ function App() {
   let [activeBurger2, setActiveBurger2] = useState("")
   let [activeBurger3, setActiveBurger3] = useState("")
 
+  let [showAsideMobile, setShowAsideMobile] = useState("")
+
   useEffect(() => {
     getAllNotes()
   }, [])
@@ -29,10 +31,14 @@ function App() {
       setActiveBurger1(activeBurger1 = "active-burger-1")
       setActiveBurger2(activeBurger2 = "active-burger-2")
       setActiveBurger3(activeBurger3 = "active-burger-3")
+
+      setShowAsideMobile(showAsideMobile = "show-aside-mobile")
     }else{
       setActiveBurger1(activeBurger1 = "")
       setActiveBurger2(activeBurger2 = "")
       setActiveBurger3(activeBurger3 = "")
+
+      setShowAsideMobile(showAsideMobile = "")
     }
   }
 
@@ -42,7 +48,7 @@ function App() {
     setCardNotesArray(cardNotesArray = notesStorage)
 
     setTitleNotesList(titleNotesList = cardNotesArray.map((value, index) => {
-      return (<li key={value.id}> <span onClick={selectNote} id={value.id} >{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
+      return (<li key={value.id}> <span onClick={selectNote} id={value.id} onClick={() => activeBurgerFunction()}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
     }).reverse())
 
     return notesStorage.sort((a, b) => {
@@ -169,7 +175,7 @@ function App() {
         <div className={`burger ${activeBurger2}`} onClick={() => activeBurgerFunction()}></div>
         <div className={`burger ${activeBurger3}`} onClick={() => activeBurgerFunction()}></div>
       </div>
-      <aside>
+      <aside className={showAsideMobile}>
         <div id="cabecalho-aside-div">
           <h1>Notes</h1>
           <img onClick={saveNotes} src={plusButtonImg} alt="plus button" />
