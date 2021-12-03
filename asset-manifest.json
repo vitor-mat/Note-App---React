@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Note-App---React/static/css/main.e9410c9e.chunk.css",
+    "main.js": "/Note-App---React/static/js/main.b88146ef.chunk.js",
+    "main.js.map": "/Note-App---React/static/js/main.b88146ef.chunk.js.map",
+    "runtime-main.js": "/Note-App---React/static/js/runtime-main.5f1436cd.js",
+    "runtime-main.js.map": "/Note-App---React/static/js/runtime-main.5f1436cd.js.map",
+    "static/js/2.b92fc7f4.chunk.js": "/Note-App---React/static/js/2.b92fc7f4.chunk.js",
+    "static/js/2.b92fc7f4.chunk.js.map": "/Note-App---React/static/js/2.b92fc7f4.chunk.js.map",
+    "index.html": "/Note-App---React/index.html",
+    "static/css/main.e9410c9e.chunk.css.map": "/Note-App---React/static/css/main.e9410c9e.chunk.css.map",
+    "static/js/2.b92fc7f4.chunk.js.LICENSE.txt": "/Note-App---React/static/js/2.b92fc7f4.chunk.js.LICENSE.txt",
+    "static/media/lixeira_icon.e773633d.svg": "/Note-App---React/static/media/lixeira_icon.e773633d.svg",
+    "static/media/plus_button.35949e92.svg": "/Note-App---React/static/media/plus_button.35949e92.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f1436cd.js",
+    "static/js/2.b92fc7f4.chunk.js",
+    "static/css/main.e9410c9e.chunk.css",
+    "static/js/main.b88146ef.chunk.js"
+  ]
+}
