@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import "./style.scss"
 
-import plusButtonImg from "./assests/plus_button.svg";
-import lixeiraIconImg from "./assests/lixeira_icon.svg";
+import plusButtonImg from "./assets/plus_button.svg";
+import lixeiraIconImg from "./assets/lixeira_icon.svg";
 function App() {
 
   let [cardNotesArray, setCardNotesArray] = useState([])
