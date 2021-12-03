@@ -21,13 +21,13 @@ function App() {
   }, [])
 
 
-  function getAllNotes(){
-    setNotesStorage(notesStorage =  JSON.parse(localStorage.getItem("notes-app-storage") || '[]'))
+  function getAllNotes() {
+    setNotesStorage(notesStorage = JSON.parse(localStorage.getItem("notes-app-storage") || '[]'))
 
     setCardNotesArray(cardNotesArray = notesStorage)
 
     setTitleNotesList(titleNotesList = cardNotesArray.map((value, index) => {
-      return (<li key={value.id}> <span onClick={selectNote} id={value.id} >{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button"/></span></li>)
+      return (<li key={value.id}> <span onClick={selectNote} id={value.id} >{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
     }).reverse())
 
     return notesStorage.sort((a, b) => {
@@ -42,7 +42,7 @@ function App() {
     setIdNoteSelected(idNoteSelected = e.target.id)
   }
 
-  async function saveNotes(){
+  async function saveNotes() {
 
     notesStorage.push({
       id: Math.floor(Math.random() * 1000000),
@@ -55,17 +55,23 @@ function App() {
     getAllNotes()
   }
 
-    async function updateNotes (e){
+  async function updateNotes(e) {
 
-      if(blockEnterFunctionValue){
+    if (blockEnterFunctionValue) {
 
-      if(titleNoteSelected === "Notes App"){
+      if (titleNoteSelected === "Notes App") {
         alert("Selecione uma nota para poder editar")
         return;
       }
+
+      if(e.target.value.length > 30){
+        alert("Número máximo de caracteres atingido!")
+        return;
+      }
+
       setTitleNoteSelected(titleNoteSelected = e.target.value)
 
-      const notesFiltedForUpdate = await removeNoteUpdate(idNoteSelected) 
+      const notesFiltedForUpdate = await removeNoteUpdate(idNoteSelected)
 
       notesFiltedForUpdate.push({
         id: idNoteSelected,
@@ -77,18 +83,18 @@ function App() {
       localStorage.setItem("notes-app-storage", JSON.stringify(notesFiltedForUpdate))
       getAllNotes()
 
-      }
+    }
   }
 
-    async function updateNotesBody (e){
+  async function updateNotesBody(e) {
 
-    if(titleNoteSelected === "Notes App"){
+    if (titleNoteSelected === "Notes App") {
       alert("Selecione uma nota para poder editar")
       return;
     }
     setBodyNoteSelected(bodyNoteSelected = e.target.value)
 
-    const notesFiltedForUpdate = await removeNoteUpdate(idNoteSelected) 
+    const notesFiltedForUpdate = await removeNoteUpdate(idNoteSelected)
 
     notesFiltedForUpdate.push({
       id: idNoteSelected,
@@ -104,8 +110,8 @@ function App() {
 
   const removeNoteUpdate = (idNoteSelected) => {
 
-    const notesFilted = cardNotesArray.filter( value => {
-      if(Number(value.id) == Number(idNoteSelected)){
+    const notesFilted = cardNotesArray.filter(value => {
+      if (Number(value.id) == Number(idNoteSelected)) {
         return false
       }
       return true
@@ -117,8 +123,8 @@ function App() {
   const removeNotePermanently = (e) => {
     setIdNoteSelected(idNoteSelected = e.target.id)
 
-    const notesFilted = cardNotesArray.filter( value => {
-      if(Number(value.id) == Number(idNoteSelected)){
+    const notesFilted = cardNotesArray.filter(value => {
+      if (Number(value.id) == Number(idNoteSelected)) {
         console.log(value)
         return false
       }
@@ -130,9 +136,9 @@ function App() {
     getAllNotes()
   }
 
-  async function blockEnterFunction(e){
+  async function blockEnterFunction(e) {
 
-    if(e.key == "Enter"){
+    if (e.key == "Enter") {
       await setBlockEnterFunctionValue(blockEnterFunctionValue = false)
       return;
     }
@@ -143,13 +149,15 @@ function App() {
 
   return (
     <div className="container">
-      <header>
-        <textarea onKeyPress={blockEnterFunction} onChange={updateNotes} value={titleNoteSelected} />
-      </header>
+      <div id="menu-hamburge">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <aside>
         <div id="cabecalho-aside-div">
           <h1>Notes</h1>
-          <img onClick={saveNotes} src={plusButtonImg} alt="plus button"/>
+          <img onClick={saveNotes} src={plusButtonImg} alt="plus button" />
         </div>
         <div id="notes-list-div-aside">
           <ul>
@@ -158,8 +166,14 @@ function App() {
         </div>
       </aside>
       <main>
+        <div id="title-note-div">
+          <textarea onKeyPress={blockEnterFunction} onChange={updateNotes} value={titleNoteSelected} />
+        </div>
         <textarea onChange={updateNotesBody} value={bodyNoteSelected} />
       </main>
+      <footer>
+        <span> Make By Vitor M. </span>
+      </footer>
     </div>
   );
 }
