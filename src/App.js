@@ -64,7 +64,7 @@ function App() {
         return;
       }
 
-      if(e.target.value.length > 30){
+      if(e.target.value.length > 29){
         alert("Número máximo de caracteres atingido!")
         return;
       }
@@ -150,9 +150,9 @@ function App() {
   return (
     <div className="container">
       <div id="menu-hamburge">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div className="burger"></div>
+        <div className="burger"></div>
+        <div className="burger"></div>
       </div>
       <aside>
         <div id="cabecalho-aside-div">
