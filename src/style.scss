@@ -188,6 +188,20 @@
                 height: 15px;
                 border-radius: 10px;
                 background: #2c3a41;
+                transition: .4s linear;
+                cursor: pointer;
+            }
+
+            .active-burger-1{
+                transform: rotatez(45deg) translateY(10px);
+            }
+            .active-burger-2{
+                position: absolute;
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            .active-burger-3{
+                transform: rotatez(-45deg) translateY(-15px);
             }
         }
 

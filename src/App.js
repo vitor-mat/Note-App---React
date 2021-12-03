@@ -16,10 +16,25 @@ function App() {
 
   let [blockEnterFunctionValue, setBlockEnterFunctionValue] = useState(true)
 
+  let [activeBurger1, setActiveBurger1] = useState("")
+  let [activeBurger2, setActiveBurger2] = useState("")
+  let [activeBurger3, setActiveBurger3] = useState("")
+
   useEffect(() => {
     getAllNotes()
   }, [])
 
+  function activeBurgerFunction(){
+    if(!activeBurger1){
+      setActiveBurger1(activeBurger1 = "active-burger-1")
+      setActiveBurger2(activeBurger2 = "active-burger-2")
+      setActiveBurger3(activeBurger3 = "active-burger-3")
+    }else{
+      setActiveBurger1(activeBurger1 = "")
+      setActiveBurger2(activeBurger2 = "")
+      setActiveBurger3(activeBurger3 = "")
+    }
+  }
 
   function getAllNotes() {
     setNotesStorage(notesStorage = JSON.parse(localStorage.getItem("notes-app-storage") || '[]'))
@@ -150,9 +165,9 @@ function App() {
   return (
     <div className="container">
       <div id="menu-hamburge">
-        <div className="burger"></div>
-        <div className="burger"></div>
-        <div className="burger"></div>
+        <div className={`burger ${activeBurger1}`} onClick={() => activeBurgerFunction()}></div>
+        <div className={`burger ${activeBurger2}`} onClick={() => activeBurgerFunction()}></div>
+        <div className={`burger ${activeBurger3}`} onClick={() => activeBurgerFunction()}></div>
       </div>
       <aside>
         <div id="cabecalho-aside-div">
