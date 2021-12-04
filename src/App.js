@@ -22,6 +22,8 @@ function App() {
 
   let [showAsideMobile, setShowAsideMobile] = useState("")
 
+  let [charactersTitleMax, setCharactersTitleMax] = useState(0);
+
   useEffect(() => {
     getAllNotes()
   }, [])
@@ -177,6 +179,9 @@ function App() {
         <div className={`burger ${activeBurger1}`} onClick={() => activeBurgerFunction()}></div>
         <div className={`burger ${activeBurger2}`} onClick={() => activeBurgerFunction()}></div>
         <div className={`burger ${activeBurger3}`} onClick={() => activeBurgerFunction()}></div>
+      </div>
+      <div id="characters-title-max-div">
+        <span>{charactersTitleMax}/29</span>
       </div>
       <aside className={showAsideMobile}>
         <div id="cabecalho-aside-div">
