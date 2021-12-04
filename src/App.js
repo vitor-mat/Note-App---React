@@ -22,7 +22,7 @@ function App() {
 
   let [showAsideMobile, setShowAsideMobile] = useState("")
 
-  let [charactersTitleMax, setCharactersTitleMax] = useState(0);
+  let [charactersTitleMax, setCharactersTitleMax] = useState(8);
 
   useEffect(() => {
     getAllNotes()
@@ -64,6 +64,7 @@ function App() {
   const selectNote = (e) => {
     const noteSelected = cardNotesArray.find((value, index) => value.id == e.target.id)
     setTitleNoteSelected(titleNoteSelected = noteSelected.title)
+    setCharactersTitleMax(charactersTitleMax = noteSelected.title.length)
     setBodyNoteSelected(bodyNoteSelected = noteSelected.body)
     setIdNoteSelected(idNoteSelected = e.target.id)
   }
@@ -94,6 +95,8 @@ function App() {
         alert("Número máximo de caracteres atingido!")
         return;
       }
+
+      setCharactersTitleMax(charactersTitleMax = e.target.value.length)
 
       setTitleNoteSelected(titleNoteSelected = e.target.value)
 
