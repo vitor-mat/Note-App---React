@@ -48,7 +48,10 @@ function App() {
     setCardNotesArray(cardNotesArray = notesStorage)
 
     setTitleNotesList(titleNotesList = cardNotesArray.map((value, index) => {
-      return (<li key={value.id}> <span onClick={selectNote} id={value.id} onClick={() => activeBurgerFunction()}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
+      return (<li key={value.id}> <span id={value.id} onClick={(e) => {
+        selectNote(e)
+        activeBurgerFunction()
+      }}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
     }).reverse())
 
     return notesStorage.sort((a, b) => {
