@@ -195,11 +195,10 @@
             align-items: flex-end;
             justify-content: center;
             gap: 3px;
-            padding-right: 10px;
-            width: 100%;
-            height: 100px;
+            height: 70px;
             position: absolute;
-            top: 0;
+            top: 15px;
+            right: 10px;
             z-index: 1000;
 
             .burger{
