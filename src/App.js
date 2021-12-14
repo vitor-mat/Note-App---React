@@ -87,18 +87,25 @@ function App() {
 
   async function saveNotes() {
 
-    notesStorage.push({
+    const storageWithNewNote = notesStorage.map(value => {
+      value.activeItem = ""
+      return value
+    })
+
+    console.log(storageWithNewNote)
+
+    storageWithNewNote.push({
       id: Math.floor(Math.random() * 1000000),
       title: "new title",
       body: "",
       update: new Date(),
-      activeItem: ""
+      activeItem: "activeItem"
     })
-    setTitleNoteSelected(titleNoteSelected = notesStorage[notesStorage.length - 1].title)
-    setCharactersTitleMax(charactersTitleMax = notesStorage[notesStorage.length - 1].title.length)
-    setBodyNoteSelected(bodyNoteSelected = notesStorage[notesStorage.length - 1].body)
-    setIdNoteSelected(idNoteSelected = notesStorage[notesStorage.length - 1].id)
-    localStorage.setItem("notes-app-storage", JSON.stringify(notesStorage))
+    setTitleNoteSelected(titleNoteSelected = storageWithNewNote[storageWithNewNote.length - 1].title)
+    setCharactersTitleMax(charactersTitleMax = storageWithNewNote[storageWithNewNote.length - 1].title.length)
+    setBodyNoteSelected(bodyNoteSelected = storageWithNewNote[storageWithNewNote.length - 1].body)
+    setIdNoteSelected(idNoteSelected = storageWithNewNote[storageWithNewNote.length - 1].id)
+    localStorage.setItem("notes-app-storage", JSON.stringify(storageWithNewNote))
     getAllNotes()
   }
 
