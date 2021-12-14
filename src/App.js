@@ -163,6 +163,11 @@ function App() {
     localStorage.setItem("notes-app-storage", JSON.stringify(notesFilted))
 
     getAllNotes()
+
+    setTitleNoteSelected(titleNoteSelected = "Notes App")
+    setIdNoteSelected(idNoteSelected = "")
+    setBodyNoteSelected(bodyNoteSelected = "Selecione uma Nota para utilizar o app...")
+
   }
 
   async function blockEnterFunction(e) {
