@@ -74,7 +74,6 @@ function App() {
     const noteWithSelectedItem = cardNotesArray.map((value, index) => {
       if(value.id == e.target.id){
         value.activeItem = "activeItem"
-        console.log('entrei')
         return value;
       }else{
         value.activeItem = ""
@@ -127,7 +126,8 @@ function App() {
         id: idNoteSelected,
         title: titleNoteSelected,
         body: bodyNoteSelected,
-        update: new Date()
+        update: new Date(),
+        activeItem: "activeItem"
       })
 
       localStorage.setItem("notes-app-storage", JSON.stringify(notesFiltedForUpdate))
@@ -150,7 +150,8 @@ function App() {
       id: idNoteSelected,
       title: titleNoteSelected,
       body: bodyNoteSelected,
-      update: new Date()
+      update: new Date(),
+      activeItem: "activeItem"
     })
 
     localStorage.setItem("notes-app-storage", JSON.stringify(notesFiltedForUpdate))
