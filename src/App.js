@@ -50,7 +50,7 @@ function App() {
     setCardNotesArray(cardNotesArray = notesStorage)
 
     setTitleNotesList(titleNotesList = cardNotesArray.map((value, index) => {
-      return (<li key={value.id}> <span id={value.id} onClick={(e) => {
+      return (<li key={value.id} className={value.activeItem}> <span id={value.id} onClick={(e) => {
         selectNote(e)
         activeBurgerFunction()
       }}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={(e) => {
@@ -65,10 +65,25 @@ function App() {
 
   const selectNote = (e) => {
     const noteSelected = cardNotesArray.find((value, index) => value.id == e.target.id)
+
     setTitleNoteSelected(titleNoteSelected = noteSelected.title)
     setCharactersTitleMax(charactersTitleMax = noteSelected.title.length)
     setBodyNoteSelected(bodyNoteSelected = noteSelected.body)
     setIdNoteSelected(idNoteSelected = e.target.id)
+
+    const noteWithSelectedItem = cardNotesArray.map((value, index) => {
+      if(value.id == e.target.id){
+        value.activeItem = "activeItem"
+        console.log('entrei')
+        return value;
+      }else{
+        value.activeItem = ""
+        return value;
+      }
+    })
+
+    localStorage.setItem("notes-app-storage", JSON.stringify(noteWithSelectedItem))
+    getAllNotes()
   }
 
   async function saveNotes() {
@@ -77,7 +92,8 @@ function App() {
       id: Math.floor(Math.random() * 1000000),
       title: "new title",
       body: "",
-      update: new Date()
+      update: new Date(),
+      activeItem: ""
     })
     setTitleNoteSelected(titleNoteSelected = notesStorage[notesStorage.length - 1].title)
     setCharactersTitleMax(charactersTitleMax = notesStorage[notesStorage.length - 1].title.length)

@@ -80,11 +80,12 @@
 
                 li{
                     width: 100%;
-                    min-height: 80px;
+                    min-height: 40px;
                     text-align: center;
                     margin: 10px 0;
                     cursor: pointer;
                     display: flex;
+                    align-items: center;
 
                     span{
                         width: 80%;
@@ -107,6 +108,12 @@
                 li:hover{
                     color: #fd520d;
                 }
+
+                
+                .activeItem{
+                    background: #fd520d;
+                }
+
             }
         }
     }
