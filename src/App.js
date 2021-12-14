@@ -198,7 +198,10 @@ function App() {
       <aside className={showAsideMobile}>
         <div id="cabecalho-aside-div">
           <h1>Notes</h1>
-          <img onClick={saveNotes} src={plusButtonImg} alt="plus button" />
+          <img onClick={() => {
+            saveNotes()
+            activeBurgerFunction()
+          }} src={plusButtonImg} alt="plus button" />
         </div>
         <div id="notes-list-div-aside">
           <ul>
