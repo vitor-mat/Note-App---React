@@ -53,7 +53,9 @@ function App() {
       return (<li key={value.id}> <span id={value.id} onClick={(e) => {
         selectNote(e)
         activeBurgerFunction()
-      }}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={removeNotePermanently} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
+      }}>{value.title}</span> <span className="icon-lixeira-span-list-aside"><img onClick={(e) => {
+        removeNotePermanently(e)
+      }} id={value.id} className="lixeira-icon" src={lixeiraIconImg} alt="plus button" /></span></li>)
     }).reverse())
 
     return notesStorage.sort((a, b) => {
@@ -77,7 +79,10 @@ function App() {
       body: "",
       update: new Date()
     })
-
+    setTitleNoteSelected(titleNoteSelected = notesStorage[notesStorage.length - 1].title)
+    setCharactersTitleMax(charactersTitleMax = notesStorage[notesStorage.length - 1].title.length)
+    setBodyNoteSelected(bodyNoteSelected = notesStorage[notesStorage.length - 1].body)
+    setIdNoteSelected(idNoteSelected = notesStorage[notesStorage.length - 1].id)
     localStorage.setItem("notes-app-storage", JSON.stringify(notesStorage))
     getAllNotes()
   }
@@ -154,7 +159,6 @@ function App() {
 
     const notesFilted = cardNotesArray.filter(value => {
       if (Number(value.id) == Number(idNoteSelected)) {
-        console.log(value)
         return false
       }
       return true
