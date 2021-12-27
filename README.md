@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Note app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação web de bloco de notas.
 
-## Available Scripts
+![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-In the project directory, you can run:
+## SUMÁRIO
 
-### `yarn start`
+- Status
+- Deploy
+- Features
+- Demonstração da Aplicação
+- Como Rodar a Aplicação
+- Pré Requisitos Para Rodar a Aplicação
+- Tecnologias utilizadas
+- Autor
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Status
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+✨Concluído ✨
 
-### `yarn test`
+## Deploy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [https://vitor-mat.github.io/Note-App---React/](https://vitor-mat.github.io/Note-App---React/)
 
-### `yarn build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Você pode criar notas independentes
+- Site responsivo
+- As notas são salvas no localStorage
+- Você pode também editar e excluir as notas do storage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demonstração da Aplicação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Note App Desktop
 
-### `yarn eject`
+<img alt="kanban desktop image" src="./readme_files/note_app_desktop.png"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Note App Mobile 1
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img alt="kanban desktop image" src="./readme_files/note_app_mobile_1.png"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Note App Mobile 2
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img alt="kanban desktop image" src="./readme_files/note_app_mobile_2.png"/>
 
-## Learn More
+## Pré Requisitos Para Rodar a Aplicação
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Instalar o Node Js.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Como Rodar a Aplicação
 
-### Code Splitting
+Pelo promt de comando entre na pasta do projeto, em seguida rode o comando npm install (para instalar as dependências), e por fim, rode o comando npm start (para que o projeto seja iniciado no navegador).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Tecnologias Utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [React_Js](https://pt-br.reactjs.org/docs/getting-started.html)
+- [Sass](https://sass-lang.com/documentation)
 
-### Making a Progressive Web App
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img alt="author photo" src="./readme_files/vitor.jpg" width="250">
 
-### Advanced Configuration
+Feito por Vitor Mateus
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/vitor_dev_/) [![linkeding](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitor-mateus-2a42461a2/)
